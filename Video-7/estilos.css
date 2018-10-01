@@ -1,0 +1,61 @@
+:root{
+    --color1: goldenrod;
+}
+
+main > *{
+    display: flex;
+    background-color: var(--color1);
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: grid;
+    font-family: sans-serif;
+    height: 100vh;
+    grid-gap: 10px;
+    /**/
+    grid-template-areas: 
+        "header"
+        "contenido"
+        "izquierda"
+        "derecha"
+        "footer";
+}
+
+
+/*Responsive*/
+
+@media (min-width:500px){
+    main{
+        grid-template-areas:
+        "header header derecha"
+        "izquierda contenido derecha"
+        "footer footer derecha"; 
+    }
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-rows: 2fr 5fr 1fr;
+}
+
+/*Nombrar las areas*/
+
+header {
+    grid-area: header;
+}
+
+aside:first-of-type {
+    grid-area: izquierda;
+}
+
+article{
+    grid-area: contenido;
+}
+
+aside:last-of-type{
+    grid-area: derecha;
+}
+
+footer{
+    grid-area: footer;
+}

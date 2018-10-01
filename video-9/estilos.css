@@ -1,0 +1,28 @@
+:root{
+    --color1: goldenrod;
+}
+
+main{
+    display: grid;
+    grid-gap: 10px;
+    height: 100vh;
+    font-family: sans-serif;
+
+    grid-template-columns: 
+        [start]
+        repeat(4,
+            minmax(80px,1fr)
+            minmax(40px.1fr)
+            minmax(20px,1fr)
+        
+        )
+        [end]
+    ;
+}
+
+div{
+    background-color: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
